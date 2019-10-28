@@ -1,0 +1,46 @@
+<div class="background-hs">
+    <div class="limiter animated fadeInLeft">
+        <div class="container-login100">
+            <div class="wrap-login100 p-t-100 p-b-50 bg-transparent">
+                <form (ngSubmit)='login(f)' #f='ngForm' class="login100-form validate-form flex-sb flex-w">
+                    <h5 class="text-center my-4 text-white">¡Bienvenido a Heartstone Cards! ingrese con su cuenta para ver la lista de cartas.</h5>
+
+                    <span *ngIf="f.submitted && f.controls['email'].errors" class="text-danger"><b>El correo es obligatorio</b></span>
+                    <div class="wrap-input100 m-b-16">
+                        <input class="input100" type="text" name="email" placeholder="Email" required email [(ngModel)]='usuario.email'>
+
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <span *ngIf="f.submitted && f.controls['password'].errors" class="text-danger text"><b>La contraseña debe de ser más de 6 letras</b></span>
+                    <div class="wrap-input100 m-b-15 m-t-10" data-validate="Password is required">
+                        <input class="input100" type="password" name="password" placeholder="Password" required minlength="6" [(ngModel)]='usuario.password'>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="flex-sb-m w-full p-t-10 p-b-24">
+                        <div class="contact100-form-checkbox">
+                            <input [(ngModel)]="recordarme" class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me" (click)='borrarEmail()'>
+                            <label class="label-checkbox100 text-white m-t-10" for="ckb1">
+                            Recordar mi usuario
+                        </label>
+                        </div>
+
+                        <div>
+                            <a routerLink="/registro" class="txt1 text-white">
+                            ¿No tienes cuenta?
+                        </a>
+                        </div>
+                    </div>
+
+                    <div class="container-login100-form-btn m-t-17">
+                        <button class="login100-form-btn" type="submit">
+                        Ingresar
+                    </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

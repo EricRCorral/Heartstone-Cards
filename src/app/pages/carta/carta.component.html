@@ -1,0 +1,57 @@
+<div class="background-cartas">
+    <div class="container animated fadeIn fast">
+        <h1 class="text-center texto pt-2">Nueva carta</h1>
+        <div class="row text-right">
+            <div class="col">
+                <button routerLink="/cartas" class="btn btn-danger"><i class="fa fa-arrow-left"> Regresar</i></button>
+            </div>
+        </div>
+
+        <div class="row texto">
+
+            <div class="col">
+
+                <form (ngSubmit)='guardar( f )' #f='ngForm'>
+
+                    <div class="form-group ">
+                        <label>Firebase ID</label>
+                        <input type="text" class="form-control" disabled="disabled" placeholder="Firebase ID" [(ngModel)]='carta.id' name='id'>
+                        <small class="form-text text-muted">Este campo es autogenerado</small>
+                    </div>
+                    <div class="form-group ">
+                        <label>Tu email</label>
+                        <input type="text" class="form-control text-muted" disabled="disabled" placeholder="Tu email" [(ngModel)]='carta.emailEditores' name='emailEditores'>
+                        <small class="form-text text-muted">Este campo es autogenerado</small>
+                    </div>
+
+                    <div class="form-group ">
+                        <label>Nombre </label>
+                        <input type="text" class="form-control" placeholder="Nombre de la carta" required [(ngModel)]='carta.nombre' name='nombre'>
+                    </div>
+
+                    <div class="form-group ">
+                        <label>Descripción</label>
+                        <input type="text" class="form-control" placeholder="Descripción" [(ngModel)]='carta.descripcion' name='descripción'>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Estándar/Salvaje</label>
+                        <br>
+                        <button *ngIf="carta.conjunto" (click)="carta.conjunto = false" class="btn btn-outline-primary w-50" type="button">
+                        <i class="fas fa-expand"> Estándar</i>
+                    </button>
+                        <button *ngIf="!carta.conjunto" (click)="carta.conjunto = true" class="btn btn-outline-success w-50" type="button">
+                            <i class="fas fa-infinity"> Salvaje</i>
+                        </button>
+                    </div>
+                    <div class="form-group text-center">
+                        <button class="btn btn-primary" type="submit">
+                    <i class="fa fa-save"></i> Guardar
+                </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

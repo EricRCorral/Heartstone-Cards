@@ -1,0 +1,21 @@
+.background-hs {
+    background-image: url(assets/images/background-hs.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+}
+
+.background-cartas {
+    background-image: url(assets/images/background-cartas-hs.jpg);
+    background-size: cover;
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.texto {
+    color: rgb(231, 170, 47);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
